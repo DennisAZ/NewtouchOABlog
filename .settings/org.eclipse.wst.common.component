@@ -2,6 +2,8 @@
     <wb-module deploy-name="NewtouchOABlog">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
         <property name="context-root" value="NewtouchOABlog"/>
         <property name="java-output-path" value="/NewtouchOABlog/build/classes"/>
     </wb-module>

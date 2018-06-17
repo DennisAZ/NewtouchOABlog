@@ -2,7 +2,7 @@ package com.newtouch.service;
 
 import java.util.List;
 
-import com.newtouch.dto.User;    
+import com.newtouch.entity.User;    
    
 public interface IUserService {    
         

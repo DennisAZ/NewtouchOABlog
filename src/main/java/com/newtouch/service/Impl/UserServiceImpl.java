@@ -1,4 +1,4 @@
-package com.newtouch.service;
+package com.newtouch.service.Impl;
 
 import java.util.List;    
 
@@ -7,7 +7,8 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.newtouch.dao.IUserDao;
-import com.newtouch.dto.User;    
+import com.newtouch.entity.User;
+import com.newtouch.service.IUserService;    
     
     
     
@@ -25,6 +26,7 @@ public class UserServiceImpl implements IUserService {
     }    
     
     public void addUser(User user) {    
+    	
         userDao.insertUser(user);    
     }    
     

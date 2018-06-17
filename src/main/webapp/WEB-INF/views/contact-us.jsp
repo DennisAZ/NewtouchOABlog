@@ -65,7 +65,7 @@
       <p class="lead">对于您的每一封邮件我们都会认真的回复.</p>
     </div>
     <div class="row">
-      <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action=" ">
+      <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="${pageContext.request.contextPath }/send/information.do">
         <div class="col-sm-5 col-sm-offset-1">
           <div class="form-group">
             <label>Name *</label>
@@ -77,11 +77,11 @@
           </div>
           <div class="form-group">
             <label>Phone</label>
-            <input type="number" class="form-control">
+            <input type="number" name="Phone" class="form-control">
           </div>
           <div class="form-group">
             <label>Company Name</label>
-            <input type="text" class="form-control">
+            <input type="text" name = "companyName" class="form-control">
           </div>
         </div>
         <div class="col-sm-5">

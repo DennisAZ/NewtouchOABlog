@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>    
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >    
 <mapper namespace="com.newtouch.dao.IUserDao" >      
-    <resultMap id="BaseResultMap" type="com.newtouch.dto.User">    
+    <resultMap id="BaseResultMap" type="com.newtouch.entity.User">    
         <result column="id" property="id" jdbcType="INTEGER" />    
         <result column="name" property="name" jdbcType="VARCHAR" />    
         <result column="password" property="password" jdbcType="VARCHAR" />    
@@ -41,7 +41,7 @@
     </select>    
         
     <!-- 插入用户 -->    
-    <insert id="insertUser" parameterType="com.newtouch.dto.User">    
+    <insert id="insertUser" parameterType="com.newtouch.entity.User">    
         insert into user      
         <trim prefix="(" suffix=")" suffixOverrides="," >      
           <if test="id != null" >      
@@ -109,7 +109,7 @@
     </delete>    
     
     <!-- 更新用户 -->    
-    <update id="updateByPrimaryKey" parameterType="com.newtouch.dto.User" >      
+    <update id="updateByPrimaryKey" parameterType="com.newtouch.entity.User" >      
         update user      
         <set >      
           <if test="name != null" >      

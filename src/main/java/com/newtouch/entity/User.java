@@ -1,4 +1,4 @@
-package com.newtouch.dto;
+package com.newtouch.entity;
 
 public class User {    
     private Integer id;    
