@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.blog.dao.AccessLogDao">
+  <resultMap id="BaseResultMap" type="com.newtouch.blog.entity.AccessLog">
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="LandIP" jdbcType="VARCHAR" property="landip" />
+    <result column="LandDate" jdbcType="TIMESTAMP" property="landdate" />
+    <result column="AccessPage" jdbcType="VARCHAR" property="accesspage" />
+    <result column="Country" jdbcType="VARCHAR" property="country" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="rectangle" jdbcType="VARCHAR" property="rectangle" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+    <result column="AccountNum" jdbcType="VARCHAR" property="accountnum" />
+  </resultMap>
+  <insert id="insert" parameterType="com.newtouch.blog.entity.AccessLog">
+    insert into accesslog (ID, LandIP, LandDate, 
+      AccessPage, Country, province, 
+      city, rectangle, operation, 
+      AccountNum)
+    values (#{id,jdbcType=VARCHAR}, #{landip,jdbcType=VARCHAR}, #{landdate,jdbcType=TIMESTAMP}, 
+      #{accesspage,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{rectangle,jdbcType=VARCHAR}, #{operation,jdbcType=VARCHAR}, 
+      #{accountnum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.newtouch.blog.entity.AccessLog">
+    insert into accesslog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="landip != null">
+        LandIP,
+      </if>
+      <if test="landdate != null">
+        LandDate,
+      </if>
+      <if test="accesspage != null">
+        AccessPage,
+      </if>
+      <if test="country != null">
+        Country,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="rectangle != null">
+        rectangle,
+      </if>
+      <if test="operation != null">
+        operation,
+      </if>
+      <if test="accountnum != null">
+        AccountNum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="landip != null">
+        #{landip,jdbcType=VARCHAR},
+      </if>
+      <if test="landdate != null">
+        #{landdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accesspage != null">
+        #{accesspage,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="rectangle != null">
+        #{rectangle,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="accountnum != null">
+        #{accountnum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newtouch.blog.dao.InformationDao">
+	<resultMap id="BaseResultMap"
+		type="com.newtouch.blog.entity.Information">
+		<result column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="Phone" jdbcType="VARCHAR" property="phone" />
+		<result column="companyName" jdbcType="VARCHAR"
+			property="companyname" />
+		<result column="subject" jdbcType="VARCHAR" property="subject" />
+		<result column="message" jdbcType="VARCHAR" property="message" />
+		<result column="submitTime" jdbcType="TIMESTAMP"
+			property="submittime" />
+		<result column="status" jdbcType="CHAR" property="status" />
+	</resultMap>
+
+	<!--查询信息 -->
+	<select id="queryByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		SELECT ID, name, email,
+		Phone, companyName, subject,
+		message, submitTime, status FROM information;
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<!-- 全部查询 -->
+	<select id="listAll" resultMap="BaseResultMap">
+		SELECT ID, name, email,
+		Phone, companyName, subject,
+		message, submitTime, status FROM information;
+		from information
+	</select>
+
+	<insert id="insert"
+		parameterType="com.newtouch.blog.entity.Information">
+		insert into information (ID, name, email,
+		Phone, companyName, subject,
+		message, submitTime, status
+		)
+		values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR},
+		#{phone,jdbcType=VARCHAR}, #{companyname,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR},
+		#{message,jdbcType=VARCHAR}, #{submittime,jdbcType=TIMESTAMP},
+		#{status,jdbcType=CHAR}
+		)
+	</insert>
+	<insert id="insertByBatch"
+		parameterType="com.newtouch.blog.entity.Information">
+		insert into information
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				ID,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="phone != null">
+				Phone,
+			</if>
+			<if test="companyname != null">
+				companyName,
+			</if>
+			<if test="subject != null">
+				subject,
+			</if>
+			<if test="message != null">
+				message,
+			</if>
+			<if test="submittime != null">
+				submitTime,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="companyname != null">
+				#{companyname,jdbcType=VARCHAR},
+			</if>
+			<if test="subject != null">
+				#{subject,jdbcType=VARCHAR},
+			</if>
+			<if test="message != null">
+				#{message,jdbcType=VARCHAR},
+			</if>
+			<if test="submittime != null">
+				#{submittime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=CHAR},
+			</if>
+		</trim>
+	</insert>
+</mapper>
