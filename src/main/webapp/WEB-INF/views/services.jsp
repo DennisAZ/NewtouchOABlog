@@ -109,8 +109,7 @@
 					<div class="feature-wrap">
 						<i class="fa fa-bullhorn"></i>
 						<h2>
-							<a
-								href="${pageContext.request.contextPath}/downloadFile/fileDownLoad?file=OAsjfx.doc">数据分析</a>
+							 <a title="/" href="../DataAnalysis/indexData.jsp" target="_blank">数据分析</a>
 						</h2>
 						<h3>海量数据处理，为管理决策提供数据依据.</h3>
 					</div>
