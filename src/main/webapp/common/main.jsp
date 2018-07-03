@@ -22,7 +22,7 @@
 <script
 	src="${pageContext.request.contextPath}/js/jquery.isotope.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
-
+<script src="${pageContext.request.contextPath}/js/echarts.js"></script>
 </head>
 
 </html>
